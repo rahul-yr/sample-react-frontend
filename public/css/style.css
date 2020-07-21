@@ -1,0 +1,11 @@
+/* .mysidebar-sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} */
+
+
+.email-border
+{
+  border:2px solid black;  
+}

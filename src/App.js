@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import AnonymousHome from "./components/Anonymous_Home";
+import AnonymousPostView from "./components/Anonymous_Post_View";
+import PageNotFound from './components/Page_Not_Found'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" component={AnonymousHome} exact />
+          <Route path="/post" component={AnonymousPostView} />
+          <Route component={PageNotFound} />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
